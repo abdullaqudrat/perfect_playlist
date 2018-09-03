@@ -1,5 +1,5 @@
-# FactoryBot.define do
-#   factory :playlist do
-#     title "MyString"
-#   end
-# end
+FactoryBot.define do
+  factory :playlist do
+    title "Bachata Night"
+  end
+end
