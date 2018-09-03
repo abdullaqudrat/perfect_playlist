@@ -3,3 +3,5 @@
 <% @artist.songs.each do |song| %>
   <%= song.title %>
 <% end %>
+
+<%= link_to 'edit', edit_artist_path(@artist) %>
