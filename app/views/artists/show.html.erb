@@ -5,3 +5,4 @@
 <% end %>
 
 <%= link_to 'edit', edit_artist_path(@artist) %>
+<%= link_to 'delete', artist_path(@artist), method: :delete, data: {confirm: "Really delete the artist?"} %>
