@@ -1,5 +1,5 @@
 # FactoryBot.define do
-#   factory :artist do
-#     name "MyString"
+#   factory :artist, class: Artist do
+#     name { Faker::Music.band }
 #   end
 # end
