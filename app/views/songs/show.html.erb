@@ -9,5 +9,5 @@
   <li>Genre: <%= @song.dance %></li>
   <li>BPM: <%= @song.bpm %></li>
   <li>Link: <%= @song.link %></li>
-  <li>Playlists: <%= @song.playlist.title %></li>
+  <li>Playlists: <%= link_to @song.playlist.title, playlist_path(@song.playlist) %></li>
 </ul>
