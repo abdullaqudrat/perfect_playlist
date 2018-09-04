@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
+
   def index
     @songs = Song.all
   end
@@ -9,6 +10,15 @@ class SongsController < ApplicationController
   end
 
   def new
+    @song = Song.new
+    @artists = Artist.all
+    @playlists = Playlist.all
+  end
+
+  def create
+    song = Song.new(song_params)
+    song.save
+    redirect_to song_path(song)
   end
 
   def edit

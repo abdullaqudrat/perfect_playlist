@@ -46,6 +46,7 @@ describe 'R-user/admin visits song show page' do
         expect(page).to_not have_content('Romeo Santos')
         expect(page).to have_content('Odio')
         expect(page).to_not have_content('Eres Mia')
+        expect(page).to have_content("Length: 256")
       end
     end
   end

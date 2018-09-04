@@ -1,0 +1,26 @@
+<%= form_for @song do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :artist_id %>
+  <%= f.collection_select(:artist_id, @artists, :id, :name) %>
+
+  <%= f.label :length %>
+  <%= f.text_field :length %>
+
+  <%= f.label :bpm %>
+  <%= f.number_field :bpm %>
+
+  <%= f.label :genre %>
+  <%= f.text_field :dance %>
+
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+
+  <%= f.label :playlist_id %>
+  <%= f.collection_select(:playlist_id, @playlists, :id, :title) %>
+
+  <%= f.submit %>
+
+<% end %>
