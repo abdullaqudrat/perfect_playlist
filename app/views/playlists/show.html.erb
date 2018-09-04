@@ -1,0 +1,14 @@
+<h1><%= @playlist.title %></h1>
+
+<% @playlist.songs.each do |song| %>
+  <div id="song-<%=song.id%>">
+    <ul>
+      <li>Title: <%= link_to song.title, song_path(song) %></li>
+      <li>Artist: <%= link_to song.artist.name, artist_path(song.artist) %></li>
+      <li>Length: <%= song.length %></li>
+      <li>Youtube: <%= song.link %></li>
+    </ul>
+    <%= link_to "edit", edit_song_path(song) %>
+    <%= link_to "delete", song_path(song), method: :delete, data: {confirm: "Really delete #{song.title}"} %>
+  </div>
+<% end %>
