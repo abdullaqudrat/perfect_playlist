@@ -3,6 +3,6 @@
 
 <% @songs.each do |song| %>
   <div id="song-<%=song.id%>">
-    <p><%= link_to song.name, song_path(song) %></p>
+    <p><%= link_to song.title, song_path(song) %></p>
   </div>
 <% end %>

@@ -1,2 +1,11 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<h1><%= @song.title %></h1>
+
+<%= link_to 'edit', edit_song_path(@song) %>
+<%= link_to 'delete', song_path(@song), method: :delete, data: {confirm: "Really delete #{@song}?"} %>
+
+<ul>
+  <li>Artist: <%= link_to @song.artist.name, artist_path(@song.artist) %></li>
+  <li>Length: <%= @song.length %></li>
+  <li>BPM: <%= @song.bpm %></li>
+  <li>Link: <%= @song.link %></li>
+</ul>
