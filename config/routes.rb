@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :playlists, shallow: true do
     resources :songs
   end
+
+  resources :songs, only: [:index]
 end
