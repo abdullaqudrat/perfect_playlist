@@ -1,5 +1,10 @@
 <h1><%= @playlist.title %></h1>
 
+<div id="playlist-<%=@playlist.id%>">
+  <h3><%= link_to 'edit', edit_playlist_path(@playlist) %></h3>
+  <h3><%= link_to "delete", playlist_path(@playlist), method: :delete, data: {confirm: "Really delete #{@playlist.title}"} %></h3>
+</div>
+
 <% @playlist.songs.each do |song| %>
   <div id="song-<%=song.id%>">
     <ul>
