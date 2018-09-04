@@ -13,10 +13,21 @@ class SongsController < ApplicationController
 
   def edit
     # :set_song
+    @artists = Artist.all
+    @playlists = Playlist.all
+  end
+
+  def update
+    @song.update(song_params)
+    redirect_to song_path(@song)
   end
 
   private
     def set_song
       @song = Song.find(params[:id])
+    end
+
+    def song_params
+      params.require(:song).permit(:title, :length, :bpm, :dance, :link, :artist_id, :playlist_id)
     end
 end
