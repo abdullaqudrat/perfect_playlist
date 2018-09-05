@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 8592270ed97d7bfb16aa93b8dfb82d0468183e7b
+  revision: 0792a7567d4e8a7debd8d3a37ff02668e8e783b7
   branch: master
   specs:
     faker (1.9.1)
@@ -208,7 +208,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt
+  bcrypt (~> 3.1.7)
   byebug
   capybara
   coffee-rails (~> 4.2)
