@@ -1,4 +1,6 @@
-<h1><%= @song.title %></h1>
+<div class="sub_header">
+  <h1><%= @song.title %></h1>
+</div>
 
 <%= link_to 'edit', edit_song_path(@song) %>
 <%= link_to 'delete', song_path(@song), method: :delete, data: {confirm: "Really delete #{@song}?"} %>
