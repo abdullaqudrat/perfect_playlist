@@ -9,4 +9,10 @@
   <li>Genre: <%= @song.genre %></li>
   <li>BPM: <%= @song.bpm %></li>
   <li>Link: <%= @song.link %></li>
+  <li>Found on Playlists:
+    <ul><% @song.playlists.each do |playlist| %>
+      <li><%= link_to playlist.title, playlist_path(playlist) %></li>
+      <%end %>
+    </ul>
+  </li>
 </ul>
