@@ -4,9 +4,9 @@ describe 'R-user/admin visits song show page' do
   before(:each) do
     @artist = Artist.create(name: 'Romeo Santos')
     @artist_2 = Artist.create(name: 'Prince Royce')
-    @playlist = Playlist.create(title: 'Bachata Nights')
+    @song = @artist.songs.create(title: 'Eres Mia', length: 333, bpm: 99, genre: 'Pop Bachata', link: "http://youtube.com")
+    @playlist = Playlist.create(title: 'Bachata Nights', songs: [@song])
     @playlist_2= Playlist.create(title: 'Salsa Nights')
-    @song = @artist.songs.create(title: 'Eres Mia', length: 333, bpm: 99, dance: 'Pop Bachata', link: "http://youtube.com", playlist_id: @playlist.id)
   end
   describe 'R-user/admin sees song' do
     describe 'R-user/admin clicks on edit button for song' do
@@ -18,7 +18,7 @@ describe 'R-user/admin visits song show page' do
         expect(page).to have_content(@song.artist.name)
         expect(page).to have_content(@song.length)
         expect(page).to have_content(@song.bpm)
-        expect(page).to have_content(@song.dance)
+        expect(page).to have_content(@song.genre)
         expect(page).to have_content(@song.link)
 
         click_on 'edit'
@@ -35,9 +35,8 @@ describe 'R-user/admin visits song show page' do
         select 'Prince Royce', from: "Artist"
         fill_in 'song[length]', with: '256'
         fill_in 'song[bpm]', with: '80'
-        fill_in 'song[dance]', with: 'slow bachata'
+        fill_in 'song[genre]', with: 'slow bachata'
         fill_in 'song[link]', with: 'www.bachata.com'
-        select 'Salsa Nights', from: "Playlist"
 
         click_on 'Update Song'
 

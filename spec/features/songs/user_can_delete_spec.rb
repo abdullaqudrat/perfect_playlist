@@ -4,7 +4,7 @@ describe 'admin visits songs show page' do
   before(:each) do
     @artist = Artist.create(name: 'Romeo Santos')
     @playlist = Playlist.create(title: 'Bachata Nights')
-    @song = @artist.songs.create(title: 'Odio', length: 255, bpm: 110, dance: 'Sensual Bachata', link: "http://youtube.com", playlist_id: @playlist.id)
+    @song = @artist.songs.create(title: 'Odio', length: 255, bpm: 110, genre: 'Sensual Bachata', link: "http://youtube.com")
   end
   describe 'admin sees delete button' do
     describe 'admin clicks on delete button for artist' do

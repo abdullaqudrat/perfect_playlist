@@ -1,9 +1,10 @@
 class Song < ApplicationRecord
   belongs_to :artist
-  belongs_to :playlist
+  has_many :playlist_songs
+  has_many :playlists, through: :playlist_songs
   validates_presence_of :title,
                         :length,
                         :bpm,
-                        :dance,
+                        :genre,
                         :link
 end

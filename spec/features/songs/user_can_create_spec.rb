@@ -29,9 +29,8 @@ describe 'creating song' do
         select 'Prince Royce', from: "Artist"
         fill_in 'song[length]', with: '256'
         fill_in 'song[bpm]', with: '80'
-        fill_in 'song[dance]', with: 'slow bachata'
+        fill_in 'song[genre]', with: 'slow bachata'
         fill_in 'song[link]', with: 'www.bachata.com'
-        select 'Salsa Nights', from: "Playlist"
 
         click_on 'Create Song'
 
@@ -42,7 +41,6 @@ describe 'creating song' do
         expect(page).to have_content("BPM: 80")
         expect(page).to have_content("slow bachata")
         expect(page).to have_content('www.bachata.com')
-        expect(page).to have_content('Salsa Nights')
       end
     end
   end
