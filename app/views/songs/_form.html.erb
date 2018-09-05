@@ -13,13 +13,10 @@
   <%= f.number_field :bpm %>
 
   <%= f.label :genre %>
-  <%= f.text_field :dance %>
+  <%= f.text_field :genre %>
 
   <%= f.label :link %>
   <%= f.text_field :link %>
-
-  <%= f.label :playlist_id %>
-  <%= f.collection_select(:playlist_id, @playlists, :id, :title) %>
 
   <%= f.submit %>
 

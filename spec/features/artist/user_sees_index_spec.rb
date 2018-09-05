@@ -5,8 +5,8 @@ describe 'R-user/admin visits artist index page' do
     @artist = Artist.create(name: 'Romeo Santos')
     @artist_2 = Artist.create(name: 'Prince Royce')
     @playlist = Playlist.create(title: 'Bachata Nights')
-    @song = @artist.songs.create(title: 'Odio', length: 255, bpm: 110, dance: 'Sensual Bachata', link: "http://youtube.com", playlist_id: @playlist.id)
-    @song_2 = @artist_2.songs.create(title: 'Eres Mia', length: 333, bpm: 99, dance: 'Pop Bachata', link: "http://youtube.com", playlist_id: @playlist.id)
+    @song = @artist.songs.create(title: 'Odio', length: 255, bpm: 110, genre: 'Sensual Bachata', link: "http://youtube.com")
+    @song_2 = @artist_2.songs.create(title: 'Eres Mia', length: 333, bpm: 99, genre: 'Pop Bachata', link: "http://youtube.com")
   end
   describe 'R-user/admin sees list of artists' do
     describe 'R-user/admin clicks on artist name' do

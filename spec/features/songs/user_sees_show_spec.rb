@@ -4,8 +4,8 @@ describe 'user visits song show page' do
   it 'user sees song and artist' do
     artist = Artist.create(name: 'Romeo Santos')
     playlist = Playlist.create(title: 'Bachata Nights')
-    song_1 = artist.songs.create(title: 'Odio', length: 255, bpm: 110, dance: 'Sensual Bachata', link: "http://youtube.com", playlist_id: playlist.id)
-    song_2 = artist.songs.create(title: 'Eres Mia', length: 333, bpm: 99, dance: 'Pop Bachata', link: "http://youtube.com", playlist_id: playlist.id)
+    song_1 = artist.songs.create(title: 'Odio', length: 255, bpm: 110, genre: 'Sensual Bachata', link: "http://youtube.com")
+    song_2 = artist.songs.create(title: 'Eres Mia', length: 333, bpm: 99, genre: 'Pop Bachata', link: "http://youtube.com")
 
     visit song_path(song_1)
 

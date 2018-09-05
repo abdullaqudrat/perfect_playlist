@@ -5,11 +5,11 @@ RSpec.describe Song, type: :model do
     it {should validate_presence_of(:title)}
     it {should validate_presence_of(:length)}
     it {should validate_presence_of(:bpm)}
-    it {should validate_presence_of(:dance)}
+    it {should validate_presence_of(:genre)}
     it {should validate_presence_of(:link)}
   end
   describe 'relationships' do
     it {should belong_to(:artist)}
-    it {should belong_to(:playlist)}
+    it {should have_many(:playlists)}
   end
 end
