@@ -1,11 +1,20 @@
+<div class="bg">
 <div class="sub_header">
   <h1>All Playlists</h1>
+  <a><h3><%= link_to "Create a New Playlist", new_playlist_path %></h3></a>
 </div>
 
-<h3><%= link_to "Create a New Playlist", new_playlist_path %></h3>
-
-<% @playlists.each do |playlist| %>
-  <div id="playlist-<%=playlist.id%>">
-    <%= link_to playlist.title, playlist_path(playlist) %>
-  </div>
-<% end %>
+<div class="cards">
+  <% @playlists.each do |playlist| %>
+    <div class="card">
+      <a href='/playlists/<%=playlist.id%>'>
+      <div class="container">
+        <div id="playlist-<%=playlist.id%>">
+        <h4><b><%= link_to playlist.title, playlist_path(playlist) %></b></h4>
+        </div>
+      </div>
+    </a>
+    </div>
+  <% end %>
+</div>
+</div>

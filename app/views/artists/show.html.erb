@@ -1,12 +1,23 @@
 <div class="sub_header">
   <h1><%= @artist.name %></h1>
+  <div class="sub_header_buttons">
+    <a><h3><%= link_to 'edit', edit_artist_path(@artist) %></h3></a>
+    <a><h3><%= link_to 'delete', artist_path(@artist), method: :delete, data: {confirm: "Really delete #{@artist}?"} %></h3></a>
+  </div>
 </div>
-
-<%= link_to 'edit', edit_artist_path(@artist) %>
-<%= link_to 'delete', artist_path(@artist), method: :delete, data: {confirm: "Really delete #{@artist}?"} %>
-
-<ul>
+<div class="sub_header">
+  <h3>Songs For Artist</h3>
+</div>
+<div class="cards">
   <% @artist.songs.each do |song| %>
-    <li><%= link_to song.title, song_path(song) %></li>
+    <div class="card">
+      <a href='/songs/<%=song.id%>'>
+      <div class="container">
+        <div id="song-<%=song.id%>">
+        <h4><b><%= link_to song.title, song_path(song) %></b></h4>
+        </div>
+      </div>
+    </a>
+    </div>
   <% end %>
-</ul>
+</div>

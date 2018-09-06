@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :destroy, :update]
 
   def index
-    @artists = Artist.all
+    @artists = Artist.all.order(:name)
   end
 
   def show
@@ -14,9 +14,14 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    artist = Artist.new(artist_params)
-    artist.save
-    redirect_to artist_path(artist)
+    @artist = Artist.create(artist_params)
+    if @artist.save
+      flash[:notice] = 'Created!'
+      redirect_to artist_path(@artist)
+    else
+      flash[:notice] = 'Enter name!'
+      render :new
+    end
   end
 
   def edit

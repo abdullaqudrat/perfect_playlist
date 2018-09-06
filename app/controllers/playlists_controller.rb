@@ -1,7 +1,7 @@
 class PlaylistsController < ApplicationController
   before_action :set_playlist, only: [:show, :edit, :update, :destroy]
   def index
-    @playlists = Playlist.all
+    @playlists = Playlist.all.reverse
   end
 
   def show
@@ -13,9 +13,14 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    playlist = Playlist.new(playlist_params)
-    playlist.save
-    redirect_to playlist_path(playlist)
+    @playlist = Playlist.create(playlist_params)
+    if @playlist.save
+      flash[:notice] = 'Created!'
+      redirect_to playlist_path(@playlist)
+    else
+      flash[:notice] = 'Enter Title!'
+      render :new
+    end
   end
 
   def edit

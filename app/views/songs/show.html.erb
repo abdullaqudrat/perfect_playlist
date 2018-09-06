@@ -1,20 +1,30 @@
-<div class="sub_header">
-  <h1><%= @song.title %></h1>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <div class="sub_header">
+      <h1><%= @song.title %></h1>
+      <div class="sub_header_buttons">
+        <a><h3><%= link_to 'edit', edit_song_path(@song) %></h3></a>
+        <a><h3><%= link_to 'delete', song_path(@song), method: :delete, data: {confirm: "Really delete #{@song}?"} %></h3></a>
+      </div>
+    </div>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <div class="cards">
+      <div class="card">
+        <div class="container">
+          <h4><b>Artist: <%= link_to @song.artist.name, artist_path(@song.artist) %></b></h4>
+          <h4>Length: <%= Time.at(@song.length).utc.strftime("%M:%S") %></b></h4>
+          <h4><b>Genre: <%= @song.genre %></b></h4>
+          <h4><b>BPM: <%= @song.bpm %></b></h4>
+          <h4><b>Link: <%= @song.link %></b></h4>
+          <h4><b>Found on Playlists:
+            <ul><% @song.playlists.each do |playlist| %>
+              <li><%= link_to playlist.title, playlist_path(playlist) %></li>
+              <%end %>
+            </ul></b></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to 'edit', edit_song_path(@song) %>
-<%= link_to 'delete', song_path(@song), method: :delete, data: {confirm: "Really delete #{@song}?"} %>
-
-<ul>
-  <li>Artist: <%= link_to @song.artist.name, artist_path(@song.artist) %></li>
-  <li>Length: <%= Time.at(@song.length).utc.strftime("%M:%S") %></li>
-  <li>Genre: <%= @song.genre %></li>
-  <li>BPM: <%= @song.bpm %></li>
-  <li>Link: <%= @song.link %></li>
-  <li>Found on Playlists:
-    <ul><% @song.playlists.each do |playlist| %>
-      <li><%= link_to playlist.title, playlist_path(playlist) %></li>
-      <%end %>
-    </ul>
-  </li>
-</ul>
