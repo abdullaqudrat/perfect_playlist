@@ -37,7 +37,7 @@ describe 'creating song' do
         expect(current_path).to eq(song_path(Song.last))
         expect(page).to have_content("Odio")
         expect(page).to have_content('Prince Royce')
-        expect(page).to have_content("Length: 256")
+        expect(page).to have_content("Length: 04:16")
         expect(page).to have_content("BPM: 80")
         expect(page).to have_content("slow bachata")
         expect(page).to have_content('www.bachata.com')

@@ -16,7 +16,6 @@ describe 'R-user/admin visits song show page' do
 
         expect(page).to have_content(@song.title)
         expect(page).to have_content(@song.artist.name)
-        expect(page).to have_content(@song.length)
         expect(page).to have_content(@song.bpm)
         expect(page).to have_content(@song.genre)
         expect(page).to have_content(@song.link)
@@ -45,7 +44,7 @@ describe 'R-user/admin visits song show page' do
         expect(page).to_not have_content('Romeo Santos')
         expect(page).to have_content('Odio')
         expect(page).to_not have_content('Eres Mia')
-        expect(page).to have_content("Length: 256")
+        expect(page).to have_content("Length: 04:16")
       end
     end
   end

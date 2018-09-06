@@ -19,7 +19,6 @@ describe 'user visits playlist show page' do
     expect(page).to have_content(@song_2.link)
     expect(page).to have_content(@song_2.artist.name)
     expect(page).to have_content(@song_3.title)
-    expect(page).to have_content(@song_3.length)
   end
   describe 'user clicks on song title' do
     it 'should take user to song show page' do
