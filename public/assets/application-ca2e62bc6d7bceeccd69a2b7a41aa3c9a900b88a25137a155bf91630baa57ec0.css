@@ -1,0 +1,176 @@
+/* line 6, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/artists.scss */
+.cards {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+/* line 21, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/artists.scss */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 30%;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #FFFFFF;
+  opacity: 0.95;
+}
+
+/* line 31, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/artists.scss */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* line 35, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/artists.scss */
+.container {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+}
+/* line 4, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/songs.scss */
+body {
+  background-color: #9C9FA7;
+}
+
+/* line 8, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/songs.scss */
+.songcards {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+/* line 23, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/songs.scss */
+.songcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 30%;
+  margin-top: 10px;
+  padding: 0px;
+  background-color: #FFFFFF;
+  opacity: 0.95;
+}
+
+/* line 33, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/songs.scss */
+.songcard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* line 36, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/songs.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+/* line 41, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/songs.scss */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+/* line 49, /Users/abdullaqudrat/turing/2module/projects/rails_mini/perfect_playlist/app/assets/stylesheets/songs.scss */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+
+.header {
+  height: 200px;
+  width: 100%;
+  background-color: #1fc8db;
+  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #3827ff 75%);
+  color: white;
+  opacity: 0.95;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+}
+.sub_header {
+    padding: 20px;
+    color: white;
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+}
+
+.sub_header a:link, .sub_header a:visited {
+    background-color: #B4A497;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Prompt', sans-serif;
+}
+
+.sub_header_buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.sub_header a:hover, .sub_header a:active {
+    background-color: #865656;
+}
+.nav {
+    overflow: hidden;
+    background-color: #5F537C;
+}
+
+.nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ .nav a:hover {
+   background-color: #ddd;
+   color: black;
+ }
+
+ body, html {
+     height: 100%;
+     margin: 0;
+ }
+
+ .bg {
+     background-image: url("cw.jpg");
+     background-attachment: fixed;
+     background-position: center;
+
+ }
