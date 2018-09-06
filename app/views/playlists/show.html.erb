@@ -12,7 +12,7 @@
     <ul>
       <li>Title: <%= link_to song.title, song_path(song) %></li>
       <li>Artist: <%= link_to song.artist.name, artist_path(song.artist) %></li>
-      <li>Length: <%= song.length %></li>
+      <li>Length: <%= Time.at(song.length).utc.strftime("%M:%S") %></li>
       <li>Youtube: <%= song.link %></li>
     </ul>
     <%= link_to "edit", edit_song_path(song) %>

@@ -28,7 +28,7 @@ class PlaylistsController < ApplicationController
   end
 
   def destroy
-    @playlist.songs.destroy_all
+    PlaylistSong.where(playlist_id: @playlist.id).destroy_all
     @playlist.destroy
     redirect_to playlists_path
   end

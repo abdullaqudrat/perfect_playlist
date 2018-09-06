@@ -7,7 +7,7 @@
 
 <ul>
   <li>Artist: <%= link_to @song.artist.name, artist_path(@song.artist) %></li>
-  <li>Length: <%= @song.length %></li>
+  <li>Length: <%= Time.at(@song.length).utc.strftime("%M:%S") %></li>
   <li>Genre: <%= @song.genre %></li>
   <li>BPM: <%= @song.bpm %></li>
   <li>Link: <%= @song.link %></li>
