@@ -7,5 +7,6 @@
 <% @songs.each do |song| %>
   <div id="song-<%=song.id%>">
     <p><%= link_to song.title, song_path(song) %></p>
+    <p>Artist: <%= link_to song.artist.name, artist_path(song.artist) %></p>
   </div>
 <% end %>
