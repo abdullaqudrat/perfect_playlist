@@ -2,23 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body, html {
-    height: 100%;
-    margin: 0;
-}
-
-.bg {
-    /* The image used */
-    background-image: url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj-iY6Kl6XdAhVplVQKHTt2BYwQjRx6BAgBEAU&url=http%3A%2F%2Fbsnscb.com%2Fconcert-wallpapers.html&psig=AOvVaw3XV-dBo75_qXyKsmQ9ZIeh&ust=1536282103387018");
-
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .cards {
     padding: 0;
@@ -42,6 +25,7 @@ body, html {
     margin-top: 10px;
     padding: 15px;
     background-color: #FFFFFF;
+    opacity: 0.95;
 }
 
 .card:hover {

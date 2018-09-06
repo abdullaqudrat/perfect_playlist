@@ -2,7 +2,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
-    @songs = Song.all
+    @songs = Song.all.order(:title)
   end
 
   def show
@@ -15,9 +15,14 @@ class SongsController < ApplicationController
   end
 
   def create
-    song = Song.new(song_params)
-    song.save
-    redirect_to song_path(song)
+    @song = Song.create(song_params)
+    if @song.save
+      flash[:notice] = 'Created!'
+      redirect_to song_path(@song)
+    else
+      flash[:notice] = 'Enter All Fields!'
+      render :new
+    end
   end
 
   def edit

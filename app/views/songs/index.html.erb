@@ -1,12 +1,21 @@
+<div class="bg">
 <div class="sub_header">
   <h1>All Songs</h1>
+  <a><h3><%= link_to "Create a New Song", new_song_path %></h3></a>
 </div>
 
-<h3><%= link_to "Create a New Song", new_song_path %></h3>
-
-<% @songs.each do |song| %>
-  <div id="song-<%=song.id%>">
-    <p><%= link_to song.title, song_path(song) %></p>
-    <p>Artist: <%= link_to song.artist.name, artist_path(song.artist) %></p>
-  </div>
-<% end %>
+<div class="songcards">
+  <% @songs.each do |song| %>
+    <div class="songcard">
+      <a href='/songs/<%=song.id%>'>
+      <div class="container">
+        <div id="song-<%=song.id%>">
+        <h2><b><%= link_to song.title, song_path(song) %></b></h2>
+        <h4>Artist: <%= link_to song.artist.name, artist_path(song.artist) %></h4>
+        </div>
+      </div>
+    </a>
+    </div>
+  <% end %>
+</div>
+</div>
