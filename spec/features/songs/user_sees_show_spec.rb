@@ -11,7 +11,6 @@ describe 'user visits song show page' do
 
     expect(page).to have_content(song.title)
     expect(page).to have_content(song.artist.name)
-    expect(page).to have_content(song.length)
     expect(page).to have_content(song.bpm)
     expect(page).to have_content(song.genre)
     expect(page).to have_content(song.link)

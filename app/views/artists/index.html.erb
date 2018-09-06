@@ -7,10 +7,10 @@
   <% @artists.each do |artist| %>
     <div class="card">
       <a href='/artists/<%=artist.id%>'>
-      <img src="celiacruz.png" alt="Avatar" style="width:100%" >
+      <img src="celiacruz.png" alt="<%=artist.name%>" style="width:100%" >
       <div class="container">
         <div id="artist-<%=artist.id%>">
-        <h4><b><%=artist.name%></b></h4>
+        <h4><b><%=link_to artist.name, artist_path(artist)%></b></h4>
         </div>
       </div>
     </a>
